@@ -51,6 +51,9 @@ function calcuate(e){
   }
 
   var percentage = lettersInCommonCount[0]*10 + lettersInCommonCount[1];
+  while(percentage > 100){
+    percentage = (Math.floor((percentage / 100) % 10) + Math.floor((percentage / 1) % 10))*10 + Math.floor((percentage / 10) % 10);
+  }
 
   container.append(
     `<p class = "appended">${name1} and ${name2} are ${percentage}% compatible!`
